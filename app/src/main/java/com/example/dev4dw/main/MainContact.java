@@ -11,7 +11,7 @@ public interface MainContact {
     abstract class IPresenter extends BasePresenter<IView>{
 
     }
-    interface IModel{
-
+    abstract class IModel{
+        public abstract void login();
     }
 }
