@@ -7,20 +7,20 @@ import com.example.dev4dw.base.BaseFragment;
 import com.example.dev4dw.base.BasePresenter;
 import com.example.dev4dw.base.BaseView;
 
-public class DemoFragment extends BaseFragment {
+public class DemoFragment extends BaseFragment<DemoContact.DView, DemoContact.DPresenter> implements DemoContact.DView {
     @Override
     public int getLayoutID() {
         return R.layout.fragment_demo;
     }
 
     @Override
-    public BasePresenter createPresenter() {
-        return null;
+    public DemoContact.DPresenter createPresenter() {
+        return new DemoPresenter();
     }
 
     @Override
-    public BaseView createView() {
-        return null;
+    public DemoContact.DView createView() {
+        return this;
     }
 
     @Override

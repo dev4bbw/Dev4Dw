@@ -20,7 +20,7 @@ import com.example.dev4dw.main.androidPage.AndroidFragment;
 import com.example.dev4dw.main.demo.DemoFragment;
 import com.example.dev4dw.main.javaPage.JavaFragment;
 
-public class MainActivity extends BaseMvpActivity<MainContact.IView, MainPresenter> implements MainContact.IView {
+public class MainActivity extends BaseMvpActivity<MainContact.IView, MainContact.IPresenter> implements MainContact.IView {
     private Button mBack;
     private TextView mTitle;
     private RadioGroup mGroup;
@@ -36,7 +36,7 @@ public class MainActivity extends BaseMvpActivity<MainContact.IView, MainPresent
     }
 
     @Override
-    public MainPresenter createPresenter() {
+    public MainContact.IPresenter createPresenter() {
         return new MainPresenter();
     }
 

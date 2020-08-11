@@ -47,12 +47,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (holder.commentPart.getVisibility() == View.VISIBLE) {
-//                    holder.commentPart.setVisibility(View.GONE);
-//                }
-//                if (holder.commentPart.getVisibility() == View.GONE) {
-//                    holder.commentPart.setVisibility(View.VISIBLE);
-//                }
             }
         });
     }

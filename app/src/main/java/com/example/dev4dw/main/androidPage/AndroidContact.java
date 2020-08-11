@@ -1,4 +1,4 @@
-package com.example.dev4dw.main.javaPage;
+package com.example.dev4dw.main.androidPage;
 
 import com.example.dev4dw.base.BaseModel;
 import com.example.dev4dw.base.BasePresenter;
@@ -7,15 +7,15 @@ import com.example.dev4dw.bean.MyBean;
 
 import java.util.List;
 
-public interface JavaContact {
-    interface JView extends BaseView{
+public interface AndroidContact {
+     interface AView extends BaseView{
 
     }
-    abstract class JPresenter extends BasePresenter<JView>{
+    abstract class APresenter extends BasePresenter<AView>{
         public abstract List<MyBean> getData();
 
     }
-    abstract class JModel extends BaseModel{
+    abstract class AModel extends BaseModel{
         public abstract List<MyBean> loadData();
     }
 }
