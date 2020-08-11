@@ -12,7 +12,6 @@ public abstract class BaseMvpActivity<V extends BaseView, P extends BasePresente
     public P getPresenter() {
         return mPresenter;
     }
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ public abstract class BaseMvpActivity<V extends BaseView, P extends BasePresente
             mPresenter = createPresenter();
         }
         if (mView == null) {
-            createView();
+            mView = createView();
         }
         if (mPresenter != null && mView != null) {
             mPresenter.attachView(mView);
