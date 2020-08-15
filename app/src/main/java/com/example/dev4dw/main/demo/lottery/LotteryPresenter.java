@@ -15,7 +15,18 @@ class LotteryPresenter extends LotteryContact.LPresenter {
 
     @Override
     void getLotteryType() {
-        mModel.loadLotteryType(new LotteryContact.LoadTypeInterface() {
+//        mModel.loadLotteryType(new LotteryContact.LoadTypeInterface() {
+//            @Override
+//            public void loadTypeResult(List<LotteryTypeBean.ResultBean> resultBeanList) {
+//                getView().getLotteryType(resultBeanList);
+//            }
+//
+//            @Override
+//            public void loadFail(String error) {
+//                Log.d("FAIL",error);
+//            }
+//        });
+        mModel.postLotteryType(new LotteryContact.LoadTypeInterface() {
             @Override
             public void loadTypeResult(List<LotteryTypeBean.ResultBean> resultBeanList) {
                 getView().getLotteryType(resultBeanList);
@@ -23,7 +34,7 @@ class LotteryPresenter extends LotteryContact.LPresenter {
 
             @Override
             public void loadFail(String error) {
-                Log.d("FAIL",error);
+
             }
         });
     }

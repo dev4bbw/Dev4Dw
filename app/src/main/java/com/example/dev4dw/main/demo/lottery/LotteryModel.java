@@ -2,6 +2,8 @@ package com.example.dev4dw.main.demo.lottery;
 
 import com.example.dev4dw.bean.lottery.LotteryTypeBean;
 import com.example.dev4dw.http.ApiService;
+import com.example.dev4dw.http.RetrofitManager;
+import com.example.dev4dw.utils.Config;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -16,8 +18,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LotteryModel extends LotteryContact.LModel {
-    private String TYPE_URL = "http://apis.juhe.cn/lottery/";
-    private static final String KEY = "c438452e43e2f7d0ef039d9cc4ebd3f6";
 
     @Override
     void loadLotteryType(final LotteryContact.LoadTypeInterface listener) {
@@ -26,7 +26,7 @@ public class LotteryModel extends LotteryContact.LModel {
         //2.通过Retrofit实例创建接口服务对象
         //3.接口服务对象调用接口中方法，获得Call对象
         //4.Call对象执行请求（异步、同步请求）
-
+/*
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);//设置查看日志的等级
 
@@ -38,13 +38,13 @@ public class LotteryModel extends LotteryContact.LModel {
         okHttpBuilder.connectTimeout(10, TimeUnit.SECONDS);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(TYPE_URL)
+                .baseUrl(Config.LOTTERY_TYPE_URL)
                 .client(okHttpBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())//gson转换器
                 .build();
 
         retrofit.create(ApiService.class)
-                .getLotteryType(KEY)
+                .getLotteryType(Config.JUHE_KEY)
                 .enqueue(new Callback<LotteryTypeBean>() {
                     @Override
                     public void onResponse(Call<LotteryTypeBean> call, Response<LotteryTypeBean> response) {
@@ -58,6 +58,36 @@ public class LotteryModel extends LotteryContact.LModel {
                         listener.loadFail("fail");
                     }
                 });
+*/
+        RetrofitManager.getInstance().create(ApiService.class)
+                .getLotteryType(Config.JUHE_KEY)
+                .enqueue(new Callback<LotteryTypeBean>() {
+                    @Override
+                    public void onResponse(Call<LotteryTypeBean> call, Response<LotteryTypeBean> response) {
+                        List<LotteryTypeBean.ResultBean> resultBeanList = response.body().getResult();
+                        listener.loadTypeResult(resultBeanList);
+                    }
 
+                    @Override
+                    public void onFailure(Call<LotteryTypeBean> call, Throwable t) {
+                        listener.loadFail("fail");
+                    }
+                });
+    }
+
+    public void postLotteryType(final LotteryContact.LoadTypeInterface listener){
+        RetrofitManager.getInstance().create(ApiService.class)
+                .postLotteryType(Config.JUHE_KEY)
+                .enqueue(new Callback<LotteryTypeBean>() {
+                    @Override
+                    public void onResponse(Call<LotteryTypeBean> call, Response<LotteryTypeBean> response) {
+                        listener.loadTypeResult(response.body().getResult());
+                    }
+
+                    @Override
+                    public void onFailure(Call<LotteryTypeBean> call, Throwable t) {
+
+                    }
+                });
     }
 }
