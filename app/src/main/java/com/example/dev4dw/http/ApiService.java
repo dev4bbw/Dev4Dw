@@ -1,6 +1,9 @@
 package com.example.dev4dw.http;
 
 
+import com.example.dev4dw.bean.lottery.LotteryBonusBean;
+import com.example.dev4dw.bean.lottery.LotteryHistoryBean;
+import com.example.dev4dw.bean.lottery.LotteryQueryBean;
 import com.example.dev4dw.bean.lottery.LotteryTypeBean;
 
 import retrofit2.Call;
@@ -22,9 +25,39 @@ public interface ApiService {
     Call<LotteryTypeBean> getLotteryType(
             @Query("key") String key
     );
+
     @FormUrlEncoded
     @POST("lottery/types")
     Call<LotteryTypeBean> postLotteryType(
             @Field("key") String key
     );
+
+    @FormUrlEncoded
+    @POST("lottery/query")
+    Call<LotteryQueryBean> queryLottery(
+            @Field("key") String key,
+            @Field("lottery_id") String id,
+            @Field("lottery_no") String no
+    );
+
+    @FormUrlEncoded
+    @POST("lottery/history")
+    Call<LotteryHistoryBean> historyLottery(
+            @Field("key") String key,
+            @Field("lottery_id") String id,
+            @Field("page") String page,
+            @Field("page_size") String size
+
+    );
+
+    @FormUrlEncoded
+    @POST("lottery/bonus")
+    Call<LotteryBonusBean> bonusLottery(
+            @Field("key") String key,
+            @Field("lottery_id") String id,
+            @Field("lottery_no") String no,
+            @Field("lottery_res") String res
+
+    );
 }
+

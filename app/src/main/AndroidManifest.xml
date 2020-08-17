@@ -20,6 +20,7 @@
         <activity android:name=".base.BaseMvpActivity" />
         <activity android:name=".main.demo.lottery.LotteryActivity"
             android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateVisible"
             />
 
     </application>

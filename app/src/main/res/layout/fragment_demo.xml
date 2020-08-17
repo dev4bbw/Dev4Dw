@@ -5,15 +5,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/tv_bg"
         android:id="@+id/lottery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="彩票"
-        android:textSize="99dp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="开发中"
+        android:text="Lottery"
         android:textSize="99dp" />
 </LinearLayout>
