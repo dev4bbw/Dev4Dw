@@ -7,14 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dev4dw.R;
-import com.example.dev4dw.bean.MyBean;
+import com.example.apublic.bean.MyBean;
 
 import java.util.ArrayList;
 import java.util.List;

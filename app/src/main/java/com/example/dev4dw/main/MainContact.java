@@ -1,8 +1,8 @@
 package com.example.dev4dw.main;
 
 
-import com.example.dev4dw.base.BasePresenter;
-import com.example.dev4dw.base.BaseView;
+import com.example.apublic.base.BasePresenter;
+import com.example.apublic.base.BaseView;
 
 public interface MainContact {
     interface IView extends BaseView {
@@ -10,8 +10,5 @@ public interface MainContact {
     }
     abstract class IPresenter extends BasePresenter<IView>{
 
-    }
-    abstract class IModel{
-        public abstract void login();
     }
 }

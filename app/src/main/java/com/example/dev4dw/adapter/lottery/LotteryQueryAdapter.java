@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dev4dw.R;
-import com.example.dev4dw.bean.lottery.LotteryQueryBean;
+import com.example.apublic.bean.lottery.LotteryQueryBean;
 
 import java.util.ArrayList;
 import java.util.List;

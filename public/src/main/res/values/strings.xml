@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">moduel_public</string>
+    <string-array name="main_news">
+        <item> 推荐</item>
+        <item> 国内</item>
+        <item> 国际</item>
+        <item> 娱乐</item>
+        <item> 体育</item>
+        <item> 军事</item>
+        <item> 科技</item>
+        <item> 财经</item>
+        <item> 时尚</item>
+        <item> 游戏</item>
+        <item> 汽车</item>
+        <item> 健康</item>
+    </string-array>
+</resources>

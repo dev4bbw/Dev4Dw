@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tab_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="首页"
+        android:paddingTop="5dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="top|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_unread"
+        android:maxLines="1"
+        android:visibility="gone"
+        tools:text="11"
+        tools:visibility="visible"
+        android:id="@+id/rv_num"
+        android:layout_toEndOf="@+id/tab_item_text"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+</FrameLayout>
+

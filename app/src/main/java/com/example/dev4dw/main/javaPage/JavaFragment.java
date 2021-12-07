@@ -7,20 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dev4dw.R;
 import com.example.dev4dw.adapter.MyAdapter;
-import com.example.dev4dw.base.BaseFragment;
-import com.example.dev4dw.base.BasePresenter;
-import com.example.dev4dw.base.BaseView;
-import com.example.dev4dw.bean.MyBean;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.apublic.base.BaseFragment;
+import com.example.apublic.base.BasePresenter;
+import com.example.apublic.base.BaseView;
 
 public class JavaFragment extends BaseFragment<JavaContact.JView, JavaContact.JPresenter> implements JavaContact.JView {
     private RecyclerView mRv;
 
-    @Override
     public int getLayoutID() {
         return R.layout.fragment_java;
+    }
+
+    @Override
+    public View bindingView() {
+        return null;
     }
 
     @Override

@@ -1,13 +1,11 @@
 package com.example.dev4dw.main.androidPage;
 
-import com.example.dev4dw.base.BaseModel;
-import com.example.dev4dw.bean.MyBean;
-import com.example.dev4dw.main.demo.DemoContact;
+import com.example.apublic.bean.MyBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AndroidModel extends AndroidContact.AModel {
+public class AndroidModel{
     private static String[] AndroidTitles = {
             "AndroidBase", "AndroidSenior" , "Internet"
     };
@@ -23,7 +21,6 @@ public class AndroidModel extends AndroidContact.AModel {
             "TCP/IP结构", "TCP", "UDP", "HTTP", "HTTPS", "Socket", "DNS", "AQS", "阻塞队列"
     };
 
-    @Override
     public List<MyBean> loadData() {
         List<MyBean> dataList = new ArrayList<>();
         for (int i = 0; i < AndroidTitles.length; i++) {

@@ -1,6 +1,6 @@
 package com.example.dev4dw.main.androidPage;
 
-import com.example.dev4dw.bean.MyBean;
+import com.example.apublic.bean.MyBean;
 
 import java.util.List;
 

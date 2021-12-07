@@ -1,11 +1,11 @@
 package com.example.dev4dw.main.javaPage;
 
-import com.example.dev4dw.bean.MyBean;
+import com.example.apublic.bean.MyBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class JavaModel extends JavaContact.JModel {
+public class JavaModel   {
     private static String[] JavaTitles = {
             "JVM", "JavaBase", "JavaThread"
     };
@@ -20,7 +20,6 @@ public class JavaModel extends JavaContact.JModel {
     };
 
 
-    @Override
     public List<MyBean> loadData() {
         List<MyBean> dataList = new ArrayList<>();
         for (int i = 0; i < JavaTitles.length; i++) {

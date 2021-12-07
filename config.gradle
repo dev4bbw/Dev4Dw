@@ -1,0 +1,116 @@
+ext {
+    android = [
+            versionCode      : 20, //41 版本号 5
+            versionName      : "2.0.0", // 1.0.3版本名
+            minSdkVersion    : 21,
+            targetSdkVersaion : 29,  //28
+            compileSdkVersion: 30, //30、28
+            buildToolsVersion: "28.0.3",
+            //ndkAbi           : "armeabi-v7a"//32位 'x86','armeabi-v7a',"arm64-v8a"
+            ndkAbi           : "arm64-v8a"//64位 'x86','armeabi-v7a',"arm64-v8a"
+    ]
+//    //================新模块使用的依赖版本号================
+    versions = [
+            android_gradle_plugin: '3.6.3',    //gradle插件版本   //4.0.0
+
+            support              : '28.0.0',   //官方依赖包版本
+
+            retrofit            : '2.5.0',
+            okhttp3             : '3.12.1',
+            okio                : '1.15.0',
+            gson                : '2.8.2',     //gson解析
+            okhttp3loginterceptor : '3.4.1', //okHttp3的日志拦截器
+//            fastjsonconverter   : '2.1.0',     //Retrofit的fastJson解析器
+//            //---------- 其他 -------------
+            glide               : '4.12.0',     //glide图片库
+
+            butterknife               : '10.2.1',     //butterknife框架
+
+    ]
+
+    //======================== 插件库 ===================================
+
+    plugins = [
+            android_gradle    : [group  : 'com.android.tools.build', name: 'gradle',
+                                 version: versions.android_gradle_plugin],
+            butterknife_gradle: [group  : 'com.jakewharton', name: 'butterknife-gradle-plugin',
+                                   version: versions.butterknife],
+
+    ]
+
+    dependencies = [
+            //------------------- 官方依赖库 ------------------
+            //*************Support*****************
+            appcompat_v7    : [group: 'com.android.support', name: 'appcompat-v7',
+                               version: versions.support],
+//            support_v13     : [group: 'com.android.support', name: 'support-v13',
+//                               version: versions.support],
+//            design          : [group: 'com.android.support', name: 'design',
+//                               version: versions.support],
+            recyclerview    : [group: 'com.android.support', name: 'recyclerview-v7',
+                               version: versions.support],
+
+            //------------RxJava------------------
+            "rxjava"              : "io.reactivex:rxjava:1.1.0",
+            "rxandroid"           : "io.reactivex:rxandroid:1.1.0",
+
+            rxjava2         : [group: 'io.reactivex.rxjava2', name: 'rxjava',
+                               version: versions.rxjava2],
+            rxandroid2      : [group: 'io.reactivex.rxjava2', name: 'rxandroid',
+                               version: versions.rxandroid2],
+            rxkotlin2       : [group: 'io.reactivex.rxjava2', name: 'rxkotlin',
+                               version: versions.rxkotlin2],
+
+            //兼容rxJava1.x版本的retrofit适配器，用于兼容旧模块
+            "retrofit-adapter-rxjava"    : "com.squareup.retrofit2:adapter-rxjava:2.5.0",
+
+            okhttp3         : [group: 'com.squareup.okhttp3', name: 'okhttp',
+                               version: versions.okhttp3],
+            okio            : [group: 'com.squareup.okio', name: 'okio',
+                               version: versions.okio],
+            //okhttp3日志拦截器（只在旧模块使用）
+            okhttp3_loging  : [group: 'com.squareup.okhttp3', name: 'logging-interceptor',
+                               version: versions.okhttp3loginterceptor],
+            gson            : [group: 'com.google.code.gson', name: 'gson',
+                               version: versions.gson],
+//            //fastjson解析（暂无使用）
+//            fastjson        : [group: 'com.alibaba', name: 'fastjson',
+//                               version: versions.fastjson],
+//
+            retrofit        : [group: 'com.squareup.retrofit2', name: 'retrofit',
+                               version: versions.retrofit],
+            retrofit_rxjava2: [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2',
+                               version: versions.retrofit],
+            //retrofit支持gson解析
+            retrofit_gson   : [group: 'com.squareup.retrofit2', name: 'converter-gson',
+                               version: versions.retrofit],
+            //retrofit支持解析成标准字符串
+            retrofit_scalars: [group: 'com.squareup.retrofit2', name: 'converter-scalars',
+                               version: versions.retrofit],
+
+            butterknife: [group: 'com.jakewharton', name: 'butterknife',
+                               version: versions.butterknife],
+            butterknife_compiler: [group: 'com.jakewharton', name: 'butterknife-compiler',
+                               version: versions.butterknife],
+
+
+
+            glide           : [group: 'com.github.bumptech.glide', name: 'glide',
+                               version: versions.glide],
+            glide_annotations : [group: 'com.github.bumptech.glide', name: 'annotations',
+                                 version: versions.glide],
+
+            "materialrefeshlayout": "com.cjj.materialrefeshlayout:library:1.3.0",
+
+
+            "jiguang_jpush"    : "cn.jiguang.sdk:jpush:4.0.6",
+            "jiguang_jcore"    : "cn.jiguang.sdk:jcore:2.7.6",
+            "jiguang_huawei_hms"    : "com.huawei.hms:push:5.1.1.301",
+            "jiguang_plugin_huawei"    : "cn.jiguang.sdk.plugin:huawei:4.0.0",
+            "jiguang_plugin_xiaomi"    : "cn.jiguang.sdk.plugin:xiaomi:4.0.0",
+            "jiguang_plugin_oppo"    : "cn.jiguang.sdk.plugin:oppo:4.0.0",
+            "jiguang_plugin_vivo"    : "cn.jiguang.sdk.plugin:vivo:4.0.0"
+    ]
+
+
+}
