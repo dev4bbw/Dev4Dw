@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import butterknife.ButterKnife;
+
 public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragment {
     private V mView;
     public P mPresenter;
@@ -24,6 +26,7 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = bindingView();
         mContext = getActivity();
+        ButterKnife.bind(this,view);
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
@@ -35,6 +38,8 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
         }
         init(view);
         initData();
+
+
         return view;
     }
 

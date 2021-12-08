@@ -44,24 +44,25 @@ public class MoreBaseUrlInterceptor implements Interceptor {
             builder.removeHeader("urlname");
             String urlname = urlnameList.get(0);
             HttpUrl baseURL = null;
-            if ("juhe".equals(urlname)) {
-                baseURL = HttpUrl.parse(baseStringURL);
-                if (body instanceof FormBody) {
-                    newBody = addParamsToFormBody((FormBody) body);
-                } else if (body instanceof MultipartBody) {
-                    newBody = addParamsToMultipartBody((MultipartBody) body);
-                }
-            } else {
-                baseURL = HttpUrl.parse(baseStringURL);
+            if ("API".equals(urlname)) {
+                baseURL = HttpUrl.parse(Config.BASE_API_URL);
+//                if (body instanceof FormBody) {
+//                    newBody = addParamsToFormBody((FormBody) body);
+//                } else if (body instanceof MultipartBody) {
+//                    newBody = addParamsToMultipartBody((MultipartBody) body);
+//                }
+            } else if ("V".equals(urlname)){
+                baseURL = HttpUrl.parse(Config.BASE_V_URL);
             }
             HttpUrl.Builder builder1 = oldUrl.newBuilder()
                     .scheme(baseURL.scheme())//http协议如：http或者https
+                    .port(baseURL.port())
                     .host(baseURL.host())//主机地址
                     ;
 
             HttpUrl newHttpUrl = builder1.build();
             //获取处理后的新newRequest
-            Request newRequest = builder.url(newHttpUrl).method(originalRequest.method(),newBody).build();
+            Request newRequest = builder.url(newHttpUrl).build();
             return chain.proceed(newRequest);
         } else {
             return chain.proceed(originalRequest);

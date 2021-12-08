@@ -8,11 +8,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apublic.R;
+import com.example.apublic.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 
-public abstract class BaseMvpActivity<V extends BaseView, P extends BasePresenter<V>> extends AppCompatActivity {
-    private P mPresenter;
+public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends AppCompatActivity {
+    public P mPresenter;
     private V mView;
 
     public P getPresenter() {
@@ -35,14 +36,14 @@ public abstract class BaseMvpActivity<V extends BaseView, P extends BasePresente
 
         init();
 
+        StatusBarUtil.setStatusBarColor(this,R.color.black);
+
     }
 
 //    public abstract int getLayoutId();
-    public abstract void initBinding();
     public abstract P createPresenter();
-
     public abstract V createView();
-
+    public abstract void initBinding();
     public abstract void init();
     /**
      * 获取屏幕分辨率

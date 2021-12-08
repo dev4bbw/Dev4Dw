@@ -46,7 +46,6 @@ public class MainActivity extends BaseMvpActivity<MainContact.IView, MainContact
 
     @Override
     public void init() {
-        StatusBarUtil.setStatusBarColor(this,R.color.black);
         initListener();
         initFragment();
 
@@ -80,7 +79,9 @@ public class MainActivity extends BaseMvpActivity<MainContact.IView, MainContact
 
     private void initFragment() {
         homeFragment = new HomeFragment();
+        commonFragment = new CommonFragment();
         listFragments.add(homeFragment);
+        listFragments.add(commonFragment);
     }
 
     private void initListener() {

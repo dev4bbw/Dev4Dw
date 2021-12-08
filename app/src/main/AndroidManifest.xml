@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".main.MainActivity"/>
         <activity android:name="com.example.apublic.base.BaseMvpActivity" />
+        <activity android:name=".main.video.VideoAty" />
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>

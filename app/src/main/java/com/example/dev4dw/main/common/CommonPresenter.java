@@ -1,10 +1,10 @@
 package com.example.dev4dw.main.common;
 
 
-public class CommonPresenter extends CommonContact.JPresenter {
-    private CommonModel model;
+import com.example.apublic.base.BasePresenter;
+
+public class CommonPresenter extends BasePresenter<CommonFragment> {
 
     CommonPresenter() {
-        model = new CommonModel();
     }
 }

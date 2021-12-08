@@ -1,7 +1,9 @@
 package com.example.apublic.base;
 
 public class Config {
-    public static final String BASE_URL="http://v.juhe.cn/";
+    public static final String BASE_V_URL="http://v.juhe.cn/";
+    public static final String BASE_API_URL="http://apis.juhe.cn/";
+
     public static final String LOTTERY_TYPE_URL = "http://apis.juhe.cn/lottery/";
 
     public static final String JUHE_NEWS_KEY = "c3e6ba7ec6137b32c24114fc814a6de3";

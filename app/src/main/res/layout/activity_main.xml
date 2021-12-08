@@ -10,16 +10,20 @@
         android:layout_height="match_parent"
         tools:context=".main.MainActivity">
 
-        <include
-            android:id="@+id/head"
-            layout="@layout/headbar" />
+       <com.example.apublic.customer.HeadLayout
+           android:id="@+id/headLayout"
+           app:head_title="Dev4DW"
+           app:head_show_left="false"
+           app:head_show_right="false"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
 
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/bottom"
-            android:layout_below="@+id/head" />
+            android:layout_below="@+id/headLayout" />
 
         <RadioGroup
             android:id="@+id/bottom"

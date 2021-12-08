@@ -2,6 +2,7 @@ package com.example.apublic.api;
 
 import com.example.apublic.base.BaseModel;
 import com.example.apublic.base.Config;
+import com.example.apublic.bean.VideoBean;
 import com.example.apublic.bean.home.NewsBean;
 
 
@@ -25,7 +26,7 @@ public class ApiModel extends BaseModel<ApiService,ApiModel> {
         if (apiModel == null) {
             synchronized (ApiModel.class) {
                 if (apiModel == null) {
-                    apiModel = new ApiModel(Config.BASE_URL);
+                    apiModel = new ApiModel(Config.BASE_V_URL);
                 }
             }
         }
@@ -47,5 +48,19 @@ public class ApiModel extends BaseModel<ApiService,ApiModel> {
         builder.addFormDataPart("page_size", "30");  //每页返回条数, 默认30 , 最大30
         builder.addFormDataPart("is_filter","0"); //是否只返回有内容详情的新闻, 1:是, 默认0
         return getService().loadNews(builder.build());
+    }
+
+
+    /**
+     *获取视频
+     * @return
+     */
+    public Observable<VideoBean> getVideo(){
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        builder.addFormDataPart("key", Config.JUHE_VIDEO_KEY);
+        builder.addFormDataPart("type", "amusement_overall");
+        builder.addFormDataPart("size", "30");  //每页返回条数, 默认30 , 最大30
+        builder.addFormDataPart("offset",""); //偏移量, 如:2 表示从第二条开始取size条数;
+        return getService().loadVideo(builder.build());
     }
 }

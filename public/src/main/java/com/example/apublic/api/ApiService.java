@@ -1,5 +1,6 @@
 package com.example.apublic.api;
 
+import com.example.apublic.bean.VideoBean;
 import com.example.apublic.bean.home.NewsBean;
 
 import okhttp3.RequestBody;
@@ -17,9 +18,13 @@ public interface ApiService {
     /**
      *订单支付
      */
-//    @Headers("urlname:juhe")
+    @Headers({"urlname:V"})
     @POST("toutiao/index")
     Observable<NewsBean> loadNews(@Body RequestBody requestBody);
+
+    @Headers({"urlname:API"})
+    @POST("fapig/douyin/billboard")
+    Observable<VideoBean> loadVideo(@Body RequestBody requestBody);
 
 //    /**
 //     * type:http://apis.juhe.cn/lottery/types

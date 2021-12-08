@@ -3,4 +3,18 @@
     <declare-styleable name="BallLayout">
         <attr name="ballCount" format="integer"/>
     </declare-styleable>
+    <declare-styleable name="HeadLayout">
+        <attr name="head_bg_color" format="color" />
+        <attr name="head_back_img" format="reference" />
+        <attr name="head_title" format="string" />
+        <attr name="head_title_size" format="float" />
+        <attr name="head_title_color" format="color" />
+        <attr name="head_menu_img" format="reference" />
+        <attr name="head_right_text_color" format="color" />
+        <attr name="head_show_left" format="boolean" />
+        <attr name="head_show_right" format="boolean" />
+        <attr name="head_show_title" format="boolean" />
+
+    </declare-styleable>
+
 </resources>

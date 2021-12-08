@@ -46,7 +46,7 @@ public abstract class BaseModel<T,R extends BaseModel> {
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
-//                .addInterceptor(new MoreBaseUrlInterceptor(Config.BASE_URL))
+                .addInterceptor(new MoreBaseUrlInterceptor(Config.BASE_V_URL))
                 .addInterceptor(createHttpLoggingInterceptor());
         builder.hostnameVerifier(new HostnameVerifier() {
             @Override
@@ -67,7 +67,7 @@ public abstract class BaseModel<T,R extends BaseModel> {
         }
         OkHttpClient client = builder.build();
         return new Retrofit.Builder()
-                .baseUrl(Config.BASE_URL)
+                .baseUrl(Config.BASE_V_URL)
                 .client(client)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
