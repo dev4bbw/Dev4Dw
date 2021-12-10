@@ -14,4 +14,6 @@
         <item> 汽车</item>
         <item> 健康</item>
     </string-array>
+    <string name="permission_storage">为了向您提供安全优质的服务，需要向您申请存储权限</string>
+
 </resources>

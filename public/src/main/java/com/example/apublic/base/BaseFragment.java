@@ -16,6 +16,7 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
     private V mView;
     public P mPresenter;
     private Context mContext;
+    public BaseMvpActivity mActivity;
 
     public P getPresenter() {
         return mPresenter;
@@ -26,6 +27,7 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = bindingView();
         mContext = getActivity();
+        mActivity = (BaseMvpActivity) getActivity();
         ButterKnife.bind(this,view);
         if (mPresenter == null) {
             mPresenter = createPresenter();

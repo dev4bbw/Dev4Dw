@@ -51,8 +51,8 @@ public class VideoAty extends BaseMvpActivity<VideoAty,VideoPresenter> {
     }
 
     private void initRv() {
-        StaggeredGridLayoutManager sg = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        videoBinding.rv.setLayoutManager(sg);
+        videoBinding.rv.setLayoutManager(new LinearLayoutManager(this));
+        videoBinding.rv.addItemDecoration(new SpaceItemDecoration(DisplayUtil.dp2px(this,15)));
         mAdapter = new VideoAdapter(this);
         videoBinding.rv.setAdapter(mAdapter);
     }

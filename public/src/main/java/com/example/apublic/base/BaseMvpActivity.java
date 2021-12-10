@@ -8,11 +8,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apublic.R;
+import com.example.apublic.permissionlib.PermissionActivity;
 import com.example.apublic.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 
-public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends AppCompatActivity {
+public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends PermissionActivity {
     public P mPresenter;
     private V mView;
 
