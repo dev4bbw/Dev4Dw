@@ -2,7 +2,9 @@ package com.example.apublic.api;
 
 import com.example.apublic.base.BaseModel;
 import com.example.apublic.base.Config;
+import com.example.apublic.bean.ConditionBean;
 import com.example.apublic.bean.VideoBean;
+import com.example.apublic.bean.WeatherCity;
 import com.example.apublic.bean.home.NewsBean;
 
 
@@ -62,5 +64,26 @@ public class ApiModel extends BaseModel<ApiService,ApiModel> {
         builder.addFormDataPart("size", "30");  //每页返回条数, 默认30 , 最大30
         builder.addFormDataPart("offset",""); //偏移量, 如:2 表示从第二条开始取size条数;
         return getService().loadVideo(builder.build());
+    }
+
+    /**
+     *获取天气
+     * @return
+     */
+    public Observable<ConditionBean> getWeather(String city){
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        builder.addFormDataPart("key", Config.JUHE_WEATHER_KEY);
+        builder.addFormDataPart("city", city);
+        return getService().getWeather(builder.build());
+    }
+
+    /**
+     *获取支持城市
+     * @return
+     */
+    public Observable<WeatherCity> getWeatherCity(){
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        builder.addFormDataPart("key", Config.JUHE_WEATHER_KEY);
+        return getService().getWeatherCity(builder.build());
     }
 }

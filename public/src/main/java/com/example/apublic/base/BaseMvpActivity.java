@@ -10,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.apublic.R;
 import com.example.apublic.permissionlib.PermissionActivity;
 import com.example.apublic.utils.StatusBarUtil;
+import com.example.apublic.utils.dialog.ProgressDialogs;
 
 import java.util.ArrayList;
 
 public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends PermissionActivity {
     public P mPresenter;
     private V mView;
+    protected ProgressDialogs mProgressDialogs;
 
     public P getPresenter() {
         return mPresenter;
@@ -34,6 +36,8 @@ public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends Per
         if (mPresenter != null && mView != null) {
             mPresenter.attachView(mView);
         }
+
+        mProgressDialogs = new ProgressDialogs(this);
 
         init();
 
@@ -88,10 +92,31 @@ public abstract class BaseMvpActivity<V, P extends BasePresenter<V>> extends Per
         }
         overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
     }
+    public void showLoadingView() {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.showDialog();
+        }
+    }
+
+    public void showLoadingView(String msg) {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.showDialog(msg);
+        }
+    }
+
+    public void hideLoadingView() {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.closeDialog();
+        }
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (mProgressDialogs != null) {
+            mProgressDialogs.closeDialog();
+            mProgressDialogs = null;
+        }
         if (mPresenter != null) {
             mPresenter.detachView();
         }

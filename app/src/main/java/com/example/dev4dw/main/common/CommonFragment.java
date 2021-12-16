@@ -8,6 +8,7 @@ import com.example.apublic.utils.ToastUtil;
 import com.example.dev4dw.R;
 import com.example.dev4dw.databinding.FragmentCommonBinding;
 import com.example.dev4dw.main.video.VideoAty;
+import com.example.dev4dw.main.weather.WeatherAty;
 
 import butterknife.OnClick;
 
@@ -41,9 +42,11 @@ public class CommonFragment extends BaseFragment<CommonFragment,CommonPresenter>
                 getActivity().startActivity(new Intent(getContext(),VideoAty.class));
                 break;
             case R.id.weather:
+                getActivity().startActivity(new Intent(getContext(), WeatherAty.class));
+                break;
             case R.id.football:
             case R.id.lottery:
-                ToastUtil.showToast(getContext(),"Developing");
+                ToastUtil.get().showToast(getContext(),"Developing");
                 break;
 
         }

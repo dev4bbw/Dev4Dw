@@ -1,74 +1,128 @@
 package com.example.apublic.utils;
 
 import android.content.Context;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.VisibleForTesting;
+
+import com.example.apublic.R;
 import com.example.apublic.base.BaseApp;
 
 
 /**
  * 吐司工具类
  * 
- * @ClassName: ToastUtil
- * @Description: 包含: 测试用的系统自带的吐司, 自定义的吐司
- * @author feng
- * @date 2015-2-6
- * @see	
- * @modify chenmignjia
- * @date 2016-10-27
  */
 public class ToastUtil {
 
-	// 测试用吐司: 测试阶段时设为 true, 项目完成时设为 false
-	private static final boolean isShow = true;
-	
-	private static Toast toase = null;
+	private static String mLastToast = null;
 
-	/**
-	 * 测试用吐司(系统自带):
-	 * 
-	 * @param context
-	 * @param msg
-	 */
-	public static void showToastTest(Context context, String msg) {
-		if (isShow) {
-			if (context != null) {
-				Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+	private ToastUtil() {
+	}
+
+	private static ToastUtil instance;
+
+	private static Context mContext;
+
+	public static ToastUtil get() {
+		if (instance == null) {
+			synchronized (ToastUtil.class) {
+				if (instance == null) {
+					instance = new ToastUtil();
+				}
 			}
 		}
+		return instance;
 	}
 
 	/**
-	 * 吐司(系统自带):字符串类型
-	 * 
-	 * @param context
-	 * @param msg
+	 * 在Application中调用，省去每次toast需要传的context,
 	 */
-	public static void showToast(Context context, String msg) {
-		if(toase==null){
-//			toase = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-			toase = Toast.makeText(BaseApp.getInstance(), "", Toast.LENGTH_SHORT);
-		}
-		toase.setText(msg);
-		toase.show();
+	public static void init(Context mContext) {
+		ToastUtil.mContext = mContext;
+	}
+
+	// Toast对象
+	private android.widget.Toast mToast;
+	private TextView mTextView;
+
+	/**
+	 * 显示toast
+	 */
+	public void toast(String content) {
+		mLastToast = content;
+//        if (mToast == null) {
+		mToast = new android.widget.Toast(mContext);
+		View view = LayoutInflater.from(mContext).inflate(
+				R.layout.base_lay_toast, null);
+		mTextView = (TextView) view.findViewById(R.id.tvToast);
+		mToast.setView(view);
+		mToast.setGravity(Gravity.CENTER, 0, 0);
+		mToast.setDuration(android.widget.Toast.LENGTH_SHORT);
+//        }
+
+		mTextView.setText(content);
+		mToast.show();
 	}
 
 	/**
-	 * 吐司(系统自带): ID类型(xml中)
-	 * 
-	 * @param context
-	 * @param msgResId
+	 * 显示toast
 	 */
-	public static void showToast(Context context, int msgResId) {
-//		if (context != null) {
-//			Toast.makeText(context, msgResId, Toast.LENGTH_SHORT).show();
-//		}
-		
-		if(toase==null){
-//			toase = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-			toase = Toast.makeText(BaseApp.getInstance(), "", Toast.LENGTH_SHORT);
+	public void toastCustomer(String content,boolean success) {
+		mLastToast = content;
+		mToast = new android.widget.Toast(mContext);
+		View view = LayoutInflater.from(mContext).inflate(
+				R.layout.customer_toast, null);
+		ImageView icon = (ImageView)view.findViewById(R.id.icon);
+		if (success){
+			icon.setImageResource(R.mipmap.icon_toast_success);
+		}else {
+			icon.setImageResource(R.mipmap.icon_toast_fail);
 		}
-		toase.setText(msgResId);
-		toase.show();
+		mTextView = (TextView) view.findViewById(R.id.tvToast);
+		mToast.setView(view);
+		mToast.setGravity(Gravity.CENTER, 0, 0);
+		mToast.setDuration(android.widget.Toast.LENGTH_SHORT);
+		mTextView.setText(content);
+		mToast.show();
 	}
+
+
+	private static Toast toast = null;
+
+	public void showToast(Context context, String msg){
+		if(toast == null){
+			toast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
+		}
+		toast.setText(msg);
+		toast.show();
+
+	}
+
+
+
+	/**
+	 * 显示toast
+	 */
+	public void toast(int resId) {
+		String content = mContext.getString(resId);
+		toast(content);
+	}
+
+	public void cancelToast() {
+		if (mToast != null) {
+			mToast.cancel();
+		}
+	}
+
+	@VisibleForTesting
+	public String getLastToast() {
+		return mLastToast;
+	}
+
 }

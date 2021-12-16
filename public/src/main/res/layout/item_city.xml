@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="5dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:paddingVertical="15dp"
+        android:background="@drawable/select_city"
+        tools:text="广东"
+        android:id="@+id/province"
+        android:gravity="center"
+        android:textSize="@dimen/dimen_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingVertical="15dp"
+            android:background="@drawable/select_city"
+            tools:text="广州"
+            android:id="@+id/city"
+            android:gravity="center"
+            android:textSize="@dimen/dimen_14sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:padding="15dp"
+        android:background="@drawable/select_city"
+        tools:text="花都"
+        android:id="@+id/district"
+        android:gravity="center"
+        android:textSize="@dimen/dimen_14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.apublic.utils.dialog.ProgressDialogs;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragment {
@@ -17,6 +19,7 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
     public P mPresenter;
     private Context mContext;
     public BaseMvpActivity mActivity;
+    protected ProgressDialogs mProgressDialogs;
 
     public P getPresenter() {
         return mPresenter;
@@ -38,6 +41,8 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
         if (mPresenter != null && mView != null) {
             mPresenter.attachView(mView);
         }
+        mProgressDialogs = new ProgressDialogs(mContext);
+
         init(view);
         initData();
 
@@ -47,20 +52,43 @@ public abstract class BaseFragment<V, P extends BasePresenter<V>> extends Fragme
 
 //    public abstract int getLayoutID();
 
-    public abstract View bindingView();
+
 
     public abstract P createPresenter();
 
     public abstract V createView();
 
+    public abstract View bindingView();
+
     public abstract void init(View view);
 
     public void initData (){};
 
+    public void showLoadingView() {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.showDialog();
+        }
+    }
+
+    public void showLoadingView(String msg) {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.showDialog(msg);
+        }
+    }
+
+    public void hideLoadingView() {
+        if (mProgressDialogs != null) {
+            mProgressDialogs.closeDialog();
+        }
+    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if (mProgressDialogs != null) {
+            mProgressDialogs.closeDialog();
+            mProgressDialogs = null;
+        }
         if (mPresenter != null) {
             mPresenter.detachView();
         }

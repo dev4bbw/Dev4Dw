@@ -1,6 +1,8 @@
 package com.example.apublic.api;
 
+import com.example.apublic.bean.ConditionBean;
 import com.example.apublic.bean.VideoBean;
+import com.example.apublic.bean.WeatherCity;
 import com.example.apublic.bean.home.NewsBean;
 
 import okhttp3.RequestBody;
@@ -25,6 +27,14 @@ public interface ApiService {
     @Headers({"urlname:API"})
     @POST("fapig/douyin/billboard")
     Observable<VideoBean> loadVideo(@Body RequestBody requestBody);
+
+    @Headers({"urlname:API"})
+    @POST("simpleWeather/query")
+    Observable<ConditionBean> getWeather(@Body RequestBody requestBody);
+
+    @Headers({"urlname:API"})
+    @POST("simpleWeather/cityList")
+    Observable<WeatherCity> getWeatherCity(@Body RequestBody requestBody);
 
 //    /**
 //     * type:http://apis.juhe.cn/lottery/types

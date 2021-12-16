@@ -3,6 +3,8 @@ package com.example.apublic.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.amap.api.maps.MapsInitializer;
+import com.amap.api.services.core.ServiceSettings;
 import com.example.apublic.R;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
@@ -32,6 +34,11 @@ public class BaseApp extends Application {
                                 .setFontAttrId(R.attr.fontPath)
                                 .build()))
                 .build());
+
+        MapsInitializer.updatePrivacyShow(this,true,true);
+        MapsInitializer.updatePrivacyAgree(this,true);
+        ServiceSettings.updatePrivacyShow(this,true,true);
+        ServiceSettings.updatePrivacyAgree(this,true);
     }
 
     //static 代码段可以防止内存泄露
