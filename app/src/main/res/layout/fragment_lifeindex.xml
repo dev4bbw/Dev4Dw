@@ -1,6 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="空调"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/acV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ac"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/acD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/acV"
+                android:layout_toEndOf="@+id/ac"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/allergy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="过敏"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/allergyV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/allergy"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/allergyD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allergyV"
+                android:layout_toEndOf="@+id/allergy"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/comfort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="舒适度"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/comfortV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/comfort"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/comfortD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/comfortV"
+                android:layout_toEndOf="@+id/comfort"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/dress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="穿衣"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/dressV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/dress"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/dressD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dressV"
+                android:layout_toEndOf="@+id/dress"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/fish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="钓鱼"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/fishV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/fish"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/fishD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fishV"
+                android:layout_toEndOf="@+id/fish"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/cold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="感冒"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/coldV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cold"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/coldD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coldV"
+                android:layout_toEndOf="@+id/cold"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/rays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="紫外线"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/raysV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/rays"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/raysD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/raysV"
+                android:layout_toEndOf="@+id/rays"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/wash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="洗车"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/washV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/wash"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/washD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/washV"
+                android:layout_toEndOf="@+id/wash"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运动"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/sportV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/sport"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/sportD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sportV"
+                android:layout_toEndOf="@+id/sport"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/umbrella"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="带伞"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/umbrellaV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/umbrella"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+
+            <TextView
+                android:id="@+id/umbrellaD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/umbrellaV"
+                android:layout_toEndOf="@+id/umbrella"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="xx" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

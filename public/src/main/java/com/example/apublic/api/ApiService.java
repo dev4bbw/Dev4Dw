@@ -1,6 +1,7 @@
 package com.example.apublic.api;
 
 import com.example.apublic.bean.ConditionBean;
+import com.example.apublic.bean.LifeIndexBean;
 import com.example.apublic.bean.VideoBean;
 import com.example.apublic.bean.WeatherCity;
 import com.example.apublic.bean.home.NewsBean;
@@ -31,6 +32,10 @@ public interface ApiService {
     @Headers({"urlname:API"})
     @POST("simpleWeather/query")
     Observable<ConditionBean> getWeather(@Body RequestBody requestBody);
+
+    @Headers({"urlname:API"})
+    @POST("simpleWeather/life")
+    Observable<LifeIndexBean> getLifeIndex(@Body RequestBody requestBody);
 
     @Headers({"urlname:API"})
     @POST("simpleWeather/cityList")

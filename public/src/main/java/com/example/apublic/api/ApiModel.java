@@ -3,6 +3,7 @@ package com.example.apublic.api;
 import com.example.apublic.base.BaseModel;
 import com.example.apublic.base.Config;
 import com.example.apublic.bean.ConditionBean;
+import com.example.apublic.bean.LifeIndexBean;
 import com.example.apublic.bean.VideoBean;
 import com.example.apublic.bean.WeatherCity;
 import com.example.apublic.bean.home.NewsBean;
@@ -75,6 +76,17 @@ public class ApiModel extends BaseModel<ApiService,ApiModel> {
         builder.addFormDataPart("key", Config.JUHE_WEATHER_KEY);
         builder.addFormDataPart("city", city);
         return getService().getWeather(builder.build());
+    }
+
+    /**
+     *获取天气
+     * @return
+     */
+    public Observable<LifeIndexBean> getLifeIndex(String city){
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        builder.addFormDataPart("key", Config.JUHE_WEATHER_KEY);
+        builder.addFormDataPart("city", city);
+        return getService().getLifeIndex(builder.build());
     }
 
     /**

@@ -10,7 +10,7 @@ public class ConditionPresenter extends BasePresenter<ConditionFragment> {
         compositeSubscription.add(ApiModel.getInstance().getWeather(city)
                 .compose(new SchedulerTransformer<>(mView.getActivity()))
                 .subscribe(entity ->{
-
+                    mView.getWeatherSuccess(entity);
                 },ex ->{
 
                 }));

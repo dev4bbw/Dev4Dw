@@ -1,530 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="15dp">
-
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="2021-12-11" />
-
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/temper"
-            android:layout_alignStart="@+id/temper"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="晴" />
-
-        <TextView
-            android:id="@+id/wid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/date"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="晴" />
-
-        <TextView
-            android:id="@+id/temper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textColor="@color/colorBlue"
-            android:textSize="36sp"
-            tools:text="4" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/temper"
-            android:layout_marginBottom="5dp"
-            android:layout_toEndOf="@+id/temper"
-            android:text="°C"
-            android:textColor="@color/colorBlue"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/humidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_below="@+id/wid"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="湿度：82" />
-
-        <TextView
-            android:id="@+id/direct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_above="@+id/power"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="风向：西北风" />
-
-        <TextView
-            android:id="@+id/power"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_above="@+id/aqi"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="风力：3级" />
-
-        <TextView
-            android:id="@+id/aqi"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/dimen_14sp"
-            tools:text="空气质量指数：80" />
-    </RelativeLayout>
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:gravity="center_vertical"
+        <RelativeLayout
+            android:id="@+id/rl_todayWeather"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
+            android:layout_height="wrap_content"
+            tools:layout_height="400dp"
+            android:padding="15dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="2021-12-11" />
 
-                <TextView
-                    android:id="@+id/date1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="2021-12-11" />
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
 
-                <TextView
-                    android:id="@+id/temper1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="1/7°C" />
-
-                <TextView
-                    android:id="@+id/weather1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="小雨转多云" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_below="@+id/temper"
+                android:layout_alignStart="@+id/temper"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="晴" />
 
-                <TextView
-                    android:id="@+id/day1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="昼：阵雨" />
+            <TextView
+                android:id="@+id/wid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="晴" />
 
-                <TextView
-                    android:id="@+id/night1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="夜：雷阵雨" />
+            <TextView
+                android:id="@+id/temper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorBlue"
+                android:textSize="36sp"
+                tools:text="4" />
 
-                <TextView
-                    android:id="@+id/direct1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="北风转西北风" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/temper"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@+id/temper"
+                android:text="°C"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:gravity="center_vertical"
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/wid"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="湿度：82" />
+
+            <TextView
+                android:id="@+id/direct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_above="@+id/power"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="风向：西北风" />
+
+            <TextView
+                android:id="@+id/power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_above="@+id/aqi"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="风力：3级" />
+
+            <TextView
+                android:id="@+id/aqi"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/dimen_14sp"
+                tools:text="空气质量指数：80" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/futureRv"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="2021-12-11" />
-
-                <TextView
-                    android:id="@+id/temper2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="1/7°C" />
-
-                <TextView
-                    android:id="@+id/weather2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="小雨转多云" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/day2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="昼：阵雨" />
-
-                <TextView
-                    android:id="@+id/night2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="夜：雷阵雨" />
-
-                <TextView
-                    android:id="@+id/direct2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="北风转西北风" />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:gravity="center_vertical"
-
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="2021-12-11" />
-
-                <TextView
-                    android:id="@+id/temper3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="1/7°C" />
-
-                <TextView
-                    android:id="@+id/weather3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="小雨转多云" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/day3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="昼：阵雨" />
-
-                <TextView
-                    android:id="@+id/night3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="夜：雷阵雨" />
-
-                <TextView
-                    android:id="@+id/direct3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="北风转西北风" />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="2021-12-11" />
-
-                <TextView
-                    android:id="@+id/temper4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="1/7°C" />
-
-                <TextView
-                    android:id="@+id/weather4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="小雨转多云" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/day4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="昼：阵雨" />
-
-                <TextView
-                    android:id="@+id/night4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="夜：雷阵雨" />
-
-                <TextView
-                    android:id="@+id/direct4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="北风转西北风" />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="2021-12-11" />
-
-                <TextView
-                    android:id="@+id/temper5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="1/7°C" />
-
-                <TextView
-                    android:id="@+id/weather5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="小雨转多云" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/day5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="昼：阵雨" />
-
-                <TextView
-                    android:id="@+id/night5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="夜：雷阵雨" />
-
-                <TextView
-                    android:id="@+id/direct5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/dimen_12sp"
-                    tools:text="北风转西北风" />
-            </LinearLayout>
-
-        </LinearLayout>
-
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>
