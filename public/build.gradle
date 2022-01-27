@@ -118,4 +118,6 @@ dependencies {
 
     api 'com.zhy:base-rvadapter:3.0.3'
 
+    api 'com.github.clans:fab:1.6.4'
+
 }
